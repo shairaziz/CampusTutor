@@ -1,19 +1,14 @@
 <?php
-$servername = "localhost";
-$username = "root" ; // mysql - u root -p;
+session_start();
+
+$host = "localhost";
+$user = "root";
 $password = "";
-$dbname = "campusTutor";
+$database = "campusTutor";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $password, $database);
 
-
-if ($conn-> connect_error)
-{
-  die( "Connection failed: " . 	$conn-> connect_error); // die = print and break
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-else
-{
-  echo "Connection succesful";  // echo = print
-}  
-
 ?>
