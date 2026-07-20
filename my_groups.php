@@ -17,7 +17,6 @@ $message_type = "";
 if (isset($_GET['leave'])) {
     $group_id = $_GET['leave'];
     
-    // Check if user is the creator (creator cannot leave)
     $group = $conn->query("SELECT created_by FROM StudyGroup WHERE group_id='$group_id'")->fetch_assoc();
     
     if ($group['created_by'] == $student_id) {
@@ -30,15 +29,13 @@ if (isset($_GET['leave'])) {
     }
 }
 
-// Handle delete request (only creator can delete)
+// Handle delete request
 if (isset($_GET['delete'])) {
     $group_id = $_GET['delete'];
     
-    // Verify user is creator
     $group = $conn->query("SELECT created_by FROM StudyGroup WHERE group_id='$group_id'")->fetch_assoc();
     
     if ($group['created_by'] == $student_id) {
-        // Delete group members first (foreign key constraint)
         $conn->query("DELETE FROM GroupMember WHERE group_id='$group_id'");
         $conn->query("DELETE FROM StudyGroup WHERE group_id='$group_id'");
         $message = "✅ Group deleted successfully.";
@@ -68,10 +65,25 @@ $my_groups = $conn->query("
 <head>
     <title>My Study Groups - CampusTutor</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .group-card { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; border-left: 5px solid #1e3c72; }
+        .group-title { color: #1e3c72; margin-bottom: 10px; }
+        .link-btn { display: inline-block; margin-top: 10px; margin-right: 10px; padding: 8px 15px; background: #28a745; color: white; text-decoration: none; border-radius: 8px; font-size: 14px; }
+        .link-btn:hover { background: #1e7e34; }
+        .chat-btn { background: #25D366; }
+        .chat-btn:hover { background: #128C7E; }
+        .leave-btn { background: #ffc107; color: #333; }
+        .leave-btn:hover { background: #e0a800; }
+        .delete-btn { background: #dc3545; }
+        .delete-btn:hover { background: #c82333; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>📖 My Study Groups</h1>
+        <div class="header">
+            <h1>📖 My Study Groups</h1>
+            <p>Groups you've joined — connect with members!</p>
+        </div>
         
         <?php if($message): ?>
             <div class="<?php echo $message_type; ?>">
@@ -79,38 +91,42 @@ $my_groups = $conn->query("
             </div>
         <?php endif; ?>
         
-        <?php if($my_groups->num_rows > 0): ?>
-            <table>
-                <tr>
-                    <th>Subject</th>
-                    <th>Created By</th>
-                    <th>Members</th>
-                    <th>Actions</th>
-                </tr>
-                <?php while($group = $my_groups->fetch_assoc()): ?>
-                <tr>
-                    <td><?php echo $group['subject']; ?></td>
-                    <td><?php echo $group['creator_name']; ?></td>
-                    <td><?php echo $group['total_members']; ?> / <?php echo $group['max_members']; ?></td>
-                    <td>
-                        <?php if($group['created_by'] == $student_id): ?>
-                            <a href="?delete=<?php echo $group['group_id']; ?>" 
-                               onclick="return confirm('Delete this group? All members will be removed.')"
-                               class="delete-btn">Delete Group</a>
-                        <?php else: ?>
-                            <a href="?leave=<?php echo $group['group_id']; ?>" 
-                               onclick="return confirm('Leave this group?')"
-                               class="leave-btn">Leave</a>
-                        <?php endif; ?>
-                    </td>
-                </tr>
-                <?php endwhile; ?>
-            </table>
+        <?php if($my_groups && $my_groups->num_rows > 0): ?>
+            <?php while($group = $my_groups->fetch_assoc()): ?>
+                <div class="group-card">
+                    <h2 class="group-title">📚 <?= $group['subject'] ?></h2>
+                    <p class="meta">👥 Members: <?= $group['total_members'] ?> / <?= $group['max_members'] ?></p>
+                    <p class="meta">👑 Created by: <?= $group['creator_name'] ?></p>
+                    
+                    <?php if($group['chat_link']): ?>
+                        <a href="<?= $group['chat_link'] ?>" target="_blank" class="link-btn chat-btn">💬 Join Chat</a>
+                    <?php endif; ?>
+                    
+                    <?php if($group['meeting_link']): ?>
+                        <a href="<?= $group['meeting_link'] ?>" target="_blank" class="link-btn">📅 Join Meeting</a>
+                    <?php endif; ?>
+                    
+                    <?php if($group['created_by'] == $student_id): ?>
+                        <a href="?delete=<?= $group['group_id'] ?>" 
+                           onclick="return confirm('Delete this group? All members will be removed.')"
+                           class="link-btn delete-btn">🗑️ Delete Group</a>
+                    <?php else: ?>
+                        <a href="?leave=<?= $group['group_id'] ?>" 
+                           onclick="return confirm('Leave this group?')"
+                           class="link-btn leave-btn">🚪 Leave Group</a>
+                    <?php endif; ?>
+                </div>
+            <?php endwhile; ?>
         <?php else: ?>
-            <p>You haven't joined any study groups yet.</p>
+            <div class="error">
+                You haven't joined any study groups yet.
+                <br><br>
+                <a href="create_group.php">➕ Create a new group</a> | 
+                <a href="join_group.php">👥 Join a group</a>
+            </div>
         <?php endif; ?>
         
-        <p style="margin-top: 20px;">
+        <p style="margin-top: 20px; text-align: center;">
             <a href="create_group.php">➕ Create a new group</a> | 
             <a href="join_group.php">👥 Join a group</a> |
             <a href="dashboard.php">← Back to Dashboard</a>

@@ -1,12 +1,15 @@
 <?php
-session_start();
+// Only start session if not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-$host = "localhost";
-$user = "root";
+$servername = "localhost";
+$username = "root";
 $password = "";
-$database = "campusTutor";
+$dbname = "campusTutor";
 
-$conn = new mysqli($host, $user, $password, $database);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
