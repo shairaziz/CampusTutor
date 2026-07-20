@@ -65,4 +65,3 @@ Schema diagrams, EER diagrams, and normalization documentation are available in 
 - **Shaira Binte Aziz** — [GitHub](https://github.com/shairaziz)
 - **Humaira Tasnim** 
 - **Md. Redowan Ibne Azam**
--
