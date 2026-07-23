@@ -24,7 +24,7 @@ Built as a DBMS course project (CSE370) using PHP and MySQL.
 
 ## Setup & Installation
 
-1. **Install XAMPP** (or any Apache + MySQL + PHP stack) if you don't already have it.
+1. **Install XAMPP** 
 
 2. **Clone the repo** into your `htdocs` folder:
    ```bash
@@ -57,7 +57,7 @@ Schema diagrams, EER diagrams, and normalization documentation are available in 
 
 ## Notes
 
-- This project was built for academic purposes as part of CSE370 : Database course of BRACU and prioritizes core functionality over separation of concerns (no strict MVC/backend-frontend split).
+- This project was built for academic purposes as part of CSE370 
 - Default XAMPP MySQL credentials (`root` with no password) are assumed unless configured otherwise.
 
 ## Contributors
