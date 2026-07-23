@@ -63,5 +63,5 @@ Schema diagrams, EER diagrams, and normalization documentation are available in 
 ## Contributors
 
 - **Shaira Binte Aziz** — [GitHub](https://github.com/shairaziz)
-- **Md. Redowan Ibne Azam**
+- **Redowan Ibne Azam**
 - **Humaira Tasnim** 
