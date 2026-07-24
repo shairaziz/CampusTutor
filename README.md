@@ -1,4 +1,4 @@
-# CampusTutor — A Peer Based Tutoring System
+# CampusTutor — Peer Based Tutoring System
 
 CampusTutor is an intra-university peer tutoring platform that connects students with tutors verified through academic performance. Only students who earned an A or A+ in a course are eligible to tutor it, subject to final admin approval. The platform supports session booking, anonymous reviews, study groups, professor recommendations, and exam revision sessions — all through role-based dashboards for students, tutors, professors, and admins.
 
