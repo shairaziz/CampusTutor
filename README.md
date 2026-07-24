@@ -30,7 +30,7 @@ Built as a DBMS course project (CSE370) using PHP and MySQL.
    ```bash
    cd /Applications/XAMPP/xamppfiles/htdocs   # Mac
    # or C:\xampp\htdocs                        # Windows
-   git clone https://github.com/shairaziz/CampusTutor-Peer-Tutoring-System.git
+   git clone https://github.com/shairaziz/CampusTutor.git
    ```
 
 3. **Start Apache and MySQL** from the XAMPP control panel.
@@ -49,7 +49,7 @@ Built as a DBMS course project (CSE370) using PHP and MySQL.
      ```
 
 6. **Run the project:**
-   - Visit `http://localhost/CampusTutor-Peer-Tutoring-System/` in your browser
+   - Visit `http://localhost/CampusTutor/` in your browser
 
 ## Database Design
 
