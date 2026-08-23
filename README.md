@@ -2,7 +2,7 @@
 
 CampusTutor is an intra-university peer tutoring platform that connects students with tutors verified through academic performance. Only students who earned an A or A+ in a course are eligible to tutor it, subject to final admin approval. The platform supports session booking, anonymous reviews, study groups, professor recommendations, and exam revision sessions — all through role-based dashboards for students, tutors, professors, and admins.
 
-Built as CSE370(Database Management) course project using PHP and MySQL.
+Built as CSE370(Database Management) course group project using PHP and MySQL.
 
 ## Features
 
@@ -60,8 +60,3 @@ Schema diagrams, EER diagrams, and normalization documentation are available in 
 - This project was built for academic purposes as part of CSE370 
 - Default XAMPP MySQL credentials (`root` with no password) are assumed unless configured otherwise.
 
-## Contributors
-
-- **Shaira Binte Aziz** — [GitHub](https://github.com/shairaziz)
-- **Redowan Ibne Azam**
-- **Humaira Tasnim** 
