@@ -1,16 +1,16 @@
 # CampusTutor : Peer Based Tutoring System
 
-CampusTutor is an intra-university peer tutoring platform that connects students with tutors verified through academic performance. Only students who earned an A or A+ in a course are eligible to tutor it, subject to final admin approval. The platform supports session booking, anonymous reviews, study groups, professor recommendations and exam revision sessions — all through role-based dashboards for students, tutors, professors and admins.
+CampusTutor is an intra-university peer tutoring platform that connects students with tutors verified through academic performance. Only students who earned an A or A+ in a course are eligible to tutor it, subject to final admin approval. The platform supports session booking, anonymous reviews, study groups, professor recommendations and exam revision sessions, all through role-based dashboards for students, tutors, professors and admins.
 
 ## Features
 
-- **Role-based dashboards** — separate views and permissions for students, tutors, professors, and admins
-- **Tutor verification** — students become eligible tutors only after earning A/A+ in a course, pending admin approval
-- **Session booking** — students can browse verified tutors and book sessions based on availability
-- **Anonymous reviews** — one review per tutor per student
-- **Study groups** — students can create or join groups with peers sharing similar academic weaknesses
-- **Professor recommendations** — professors can recommend high-performing tutors
-- **Admin panel** — manages tutor eligibility and organizes exam revision sessions
+- **Role-based dashboards** : separate views and permissions for students, tutors, professors, and admins
+- **Tutor verification** : students become eligible tutors only after earning A/A+ in a course, pending admin approval
+- **Session booking** : students can browse verified tutors and book sessions based on availability
+- **Anonymous reviews** : one review per tutor per student
+- **Study groups** : students can create or join groups with peers sharing similar academic weaknesses
+- **Professor recommendations** : professors can recommend high-performing tutors
+- **Admin panel** : manages tutor eligibility and organizes exam revision sessions
 
 ## Tech Stack
 
