@@ -1,8 +1,6 @@
-# CampusTutor — Peer Based Tutoring System
+# CampusTutor : Peer Based Tutoring System
 
-CampusTutor is an intra-university peer tutoring platform that connects students with tutors verified through academic performance. Only students who earned an A or A+ in a course are eligible to tutor it, subject to final admin approval. The platform supports session booking, anonymous reviews, study groups, professor recommendations, and exam revision sessions — all through role-based dashboards for students, tutors, professors, and admins.
-
-Built as CSE370(Database Management) course group project using PHP and MySQL.
+CampusTutor is an intra-university peer tutoring platform that connects students with tutors verified through academic performance. Only students who earned an A or A+ in a course are eligible to tutor it, subject to final admin approval. The platform supports session booking, anonymous reviews, study groups, professor recommendations and exam revision sessions — all through role-based dashboards for students, tutors, professors and admins.
 
 ## Features
 
@@ -57,6 +55,6 @@ Schema diagrams, EER diagrams, and normalization documentation are available in 
 
 ## Notes
 
-- This project was built for academic purposes as part of CSE370 
+- This was a group project, built for academic purposes as part of CSE370(Database Management) course.
 - Default XAMPP MySQL credentials (`root` with no password) are assumed unless configured otherwise.
 
